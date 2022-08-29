@@ -1,10 +1,14 @@
 # X-Frame-Bypass
 
-Forked and adapted from [niutech/x-frame-bypass](https://github.com/niutech/x-frame-bypass)
+<sup>Forked and adapted from [niutech/x-frame-bypass](https://github.com/niutech/x-frame-bypass)</sup>
+<br><br>
 
-> You want to embed url in `<iframe>` element but the target has already protected itself by setting `X-Frame-Options` header... 
-> 
-> Don't worry: `./x-frame-bypass.sh [TARGET_URL]`
+## Long story short
+
+| 😕  |  You want to embed url in an `<iframe>` element but the target has already protected itself by setting `X-Frame-Options` header... | 
+|:---:|:---:|
+| 😁  | Don't worry: `./x-frame-bypass.sh [TARGET_URL]`  |
+
 
 *Should only be used as a basic PoC. Customized it to fit your needs*
 
