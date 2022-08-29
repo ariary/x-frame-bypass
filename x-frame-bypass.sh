@@ -28,6 +28,6 @@ NGROK_TUNNEL=$(curl --silent --show-error http://127.0.0.1:4040/api/tunnels | jq
 sed -i -e "s|GITAR_REVERSE_PROXY|${NGROK_TUNNEL}|g" ${SCRIPT} #see https://unix.stackexchange.com/questions/335640/how-to-replace-variables-strings-with-special-characters-in-sed
 surge .
 clear
-echo -e "👉 Include:\n${GREEN}<script type=\"module\" src=\"https://x-frame-bypass.surge.sh/x-frame-bypass.js\"></script>\n<iframe is=\"x-frame-bypass\" src=\"${NGROK_TUNNEL}/[PATH]\"></iframe>${NC}"
+echo -e "👉 Include:\n${GREEN}<script type=\"module\" src=\"https://x-frame-bypass.surge.sh/x-frame-bypass.js\"></script>\n<iframe is=\"x-frame-bypass\" src=\"${TARGET_URL}\"></iframe>${NC}"
 
 echo -e "\n\n🚪To terminate the process: Close ngrok + gitar and launch surge teardown x-frame-bypass.surge.sh"
