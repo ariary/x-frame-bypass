@@ -1,27 +1,20 @@
 # X-Frame-Bypass
 
-[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/x-frame-bypass)
+Forked and adapted from [niutech/x-frame-bypass](https://github.com/niutech/x-frame-bypass)
 
-X-Frame-Bypass is a [Web Component](https://www.webcomponents.org/introduction), specifically a [Customized Built-in Element](https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-customized-builtin-example), which extends an IFrame to bypass the [`X-Frame-Options: deny/sameorigin`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options) response header. Normally such headers prevent embedding a web page in an `<iframe>` element, but X-Frame-Bypass is using a CORS proxy to allow this.
+> You want to embed url in `<iframe>` element but the target has already protected itself by setting `X-Frame-Options` header... 
+> 
+> Don't worry: `./x-frame-bypass.sh [TARGET_URL]`
 
-## Usage
+*Should only be used as a basic PoC. Customized it to fit your needs*
 
-1. (Optional) Include the [Custom Elements with Built-in Extends polyfill](https://github.com/ungap/custom-elements-builtin) for Safari:
+## Prerequisites
 
-		<script src="https://unpkg.com/@ungap/custom-elements-builtin"></script>
+* [gitar](https://github.com/ariary/gitar): the reverse proxy
+* [surge](https://surge.sh): host js file + expose it
+* [ngrok](https://ngrok.com/): expose the reverse proxy
+* [tmux](https://github.com/tmux/tmux)
 
-2. Include the X-Frame-Bypass JS module:
+***Privacy Notes:*** Be aware that the traffic is going to pass trough surge and ngrok. For more privacy expose your own server.
 
-		<script type="module" src="https://unpkg.com/x-frame-bypass"></script>
 
-3. Insert the X-Frame-Bypass Custom Element:
-
-		<iframe is="x-frame-bypass" src="https://example.org/"></iframe>
-
-## Demo
-
-See the [Hacker News using X-Frame-Bypass](https://niutech.github.io/x-frame-bypass/). Supported are current versions of Chrome and Firefox browsers. Edge and Safari do not support Customized Built-in Elements yet.
-
-## License
-
-&copy; 2019 Jerzy Głowacki under Apache License 2.0.
